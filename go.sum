@@ -1,0 +1,4 @@
+github.com/tinygo-org/tinygo v0.32.0 h1:S5lRdk3QWUnBRkwV1m+yVNxi5Y6n6lmyiBPdpZXtl30=
+github.com/tinygo-org/tinygo v0.32.0/go.mod h1:u+7W9laWO6iP0d58zwP/68PffY0Dg1qqEQmw3HUL1Fs=
+tinygo.org/x/drivers v0.27.0 h1:TEGk1lQvEhXxfvpEhUu+pwmCnhtldPI+hpHlO9VYixI=
+tinygo.org/x/drivers v0.27.0/go.mod h1:q/mU8G/wz821p8xXqbkBACOlmZFDHXd//DnYnCW+dDQ=

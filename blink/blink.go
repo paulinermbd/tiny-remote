@@ -3,6 +3,7 @@
 package main
 
 import (
+	"fmt"
 	"machine"
 	"time"
 )
@@ -14,8 +15,10 @@ func main() {
 	})
 
 	for {
+		fmt.Println("Blink")
 		led.High()
 		time.Sleep(time.Millisecond * 500)
+		fmt.Println("Stop blinking")
 		led.Low()
 		time.Sleep(time.Millisecond * 500)
 	}

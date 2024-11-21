@@ -21,29 +21,31 @@ func main() {
 		ServiceUUIDs: []bluetooth.UUID{bluetooth.ServiceUUIDHumanInterfaceDevice},
 	}))
 
-	adapter.SetConnectHandler(func(device bluetooth.Device, connected bool) {
+	adapter.SetConnectHandler(func(device Device, connected bool))
+	{
 		if connected {
-			println("connected, not advertising...")
+			println("connected not advertising")
 			advState = false
 		} else {
-			println("disconnected, advertising...")
+			println("disconnected advertising")
 			advState = true
 			advUntil = time.Now().Add(5 * time.Minute)
 		}
-	})
+	}
+
 	must("start adv", adv.Start())
 
-	/*must("add service", adapter.AddService(&bluetooth.Service{
+	must("add service", adapter.AddService(&bluetooth.Service{
 		UUID: bluetooth.ServiceUUIDHumanInterfaceDevice,
 		Characteristics: []bluetooth.CharacteristicConfig{
 			{
-				Handle: ,
-				UUID:   bluetooth.CharacteristicUUIDMicrobitButtonAState,
-				Value:  []byte{0, heartRate},
-				Flags:  bluetooth.CharacteristicNotifyPermission,
+				//Handle: ,
+				UUID:  bluetooth.CharacteristicUUIDMicrobitButtonAState,
+				Value: []byte("Hello"),
+				Flags: bluetooth.CharacteristicNotifyPermission,
 			},
 		},
-	}))*/
+	}))
 
 	println("advertising...")
 	address, _ := adapter.Address()
